@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash 
 # 2014.09.30 by !h, tmux powerline installation script on osx.
 
 # Install Brew
