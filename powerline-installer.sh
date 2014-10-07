@@ -58,8 +58,9 @@ PYTHON_SITE_PACKAGE=$(python -c "from distutils.sysconfig import get_python_lib;
 cp -R $PYTHON_SITE_PACKAGE/powerline/config_files/* ~/.config/powerline
 
 ## add configuration into .tmux.conf
+curl -L https://raw.githubusercontent.com/ikhoon/powerline/develop/powerline/bindings/tmux/powerline.conf -o ~/.powerline.conf
 echo "run-shell 'powerline-daemon -q'" >> ~/.tmux.conf
-echo "source '$PYTHON_SITE_PACKAGE/powerline/bindings/tmux/powerline.conf'" >> ~/.tmux.conf
+echo "source '~/.powerline.conf'" >> ~/.tmux.conf
 
 ## font fatch
 RAND_POSTFIX=$(cat /dev/urandom | env LC_CTYPE=C tr -dc a-zA-Z0-9 | head -c 6)
