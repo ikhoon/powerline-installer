@@ -21,30 +21,34 @@ brew install cmake
 brew install socat
 
 ## psutil - python package
-pip install psutil
+pip install psutil --upgrade
 
 ## mercurial - python package
-pip install mercurial
+pip install mercurial --upgrade
 
 ## libgit2
 brew install libgit2
 
 ## pygit2 - python package
-pip install pygit2
+pip install pygit2 --upgrade
 
 ## bzr - python package
-pip install bzr
+pip install bzr --upgrade
 
 ## pyuv - python package
-pip install pyuv
+pip install pyuv --upgrade
 
 ## i3-py - python package
-pip install i3-py
+pip install i3-py --upgrade
 
 # Install powerline & tmux
 
+RAND_POSTFIX=$(cat /dev/urandom | env LC_CTYPE=C tr -dc a-zA-Z0-9 | head -c 6)
+git clone --branch 1.2 https://github.com/Lokaltog/powerline.git /tmp/powerline.$RAND_POSTFIX
+
 ## powerline - python package hosted by github
-pip install git+git://github.com/Lokaltog/powerline
+python /tmp/powerline.$RAND_POSTFIX install
+
 
 ## tmux
 brew install tmux
@@ -52,8 +56,6 @@ brew install tmux
 
 mkdir -p ~/.config/powerline
 
-RAND_POSTFIX=$(cat /dev/urandom | env LC_CTYPE=C tr -dc a-zA-Z0-9 | head -c 6)
-git clone https://github.com/Lokaltog/powerline.git /tmp/powerline.$RAND_POSTFIX
 
 ## copy default config file
 cp -R /tmp/powerline.$RAND_POSTFIX/powerline/config_files/* ~/.config/powerline
