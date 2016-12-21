@@ -44,7 +44,7 @@ pip install i3-py --upgrade
 # Install powerline & tmux
 
 RAND_POSTFIX=$(cat /dev/urandom | env LC_CTYPE=C tr -dc a-zA-Z0-9 | head -c 6)
-git clone --branch 1.2 https://github.com/Lokaltog/powerline.git /tmp/powerline.$RAND_POSTFIX
+git clone https://github.com/Lokaltog/powerline.git /tmp/powerline.$RAND_POSTFIX
 
 ## powerline - python package hosted by github
 python /tmp/powerline.$RAND_POSTFIX install
